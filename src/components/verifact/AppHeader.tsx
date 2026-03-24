@@ -3,9 +3,10 @@ import Icon from "@/components/ui/icon";
 interface AppHeaderProps {
   sidebarOpen: boolean;
   onToggleSidebar: () => void;
+  onLogout: () => void;
 }
 
-export default function AppHeader({ sidebarOpen, onToggleSidebar }: AppHeaderProps) {
+export default function AppHeader({ sidebarOpen, onToggleSidebar, onLogout }: AppHeaderProps) {
   return (
     <header className="border-b border-border bg-card/80 backdrop-blur-sm sticky top-0 z-50">
       <div className="flex items-center justify-between px-6 h-14">
@@ -41,6 +42,13 @@ export default function AppHeader({ sidebarOpen, onToggleSidebar }: AppHeaderPro
               <div className="text-xs font-medium text-foreground">Администратор</div>
               <div className="text-[10px] text-muted-foreground mono">СБ · Уровень 3</div>
             </div>
+            <button
+              onClick={onLogout}
+              title="Выйти"
+              className="ml-1 text-muted-foreground hover:text-risk-high transition-colors"
+            >
+              <Icon name="LogOut" size={15} />
+            </button>
           </div>
         </div>
       </div>
