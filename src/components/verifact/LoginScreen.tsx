@@ -1,16 +1,13 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
+import { Credential } from "@/pages/Index";
 
 interface LoginScreenProps {
   onLogin: (login: string, password: string) => boolean;
+  credentials: Credential[];
 }
 
-const DEMO_CREDENTIALS = [
-  { login: "admin", password: "admin123", name: "Администратор", role: "СБ · Уровень 3" },
-  { login: "operator", password: "oper456", name: "Оператор", role: "СБ · Уровень 1" },
-];
-
-export default function LoginScreen({ onLogin }: LoginScreenProps) {
+export default function LoginScreen({ onLogin, credentials }: LoginScreenProps) {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -145,9 +142,9 @@ export default function LoginScreen({ onLogin }: LoginScreenProps) {
         <div className="mt-4 bg-muted/40 border border-border rounded-sm p-3">
           <div className="text-[10px] mono text-muted-foreground uppercase tracking-widest mb-2">Демо-доступ</div>
           <div className="space-y-1">
-            {DEMO_CREDENTIALS.map((c) => (
+            {credentials.map((c) => (
               <button
-                key={c.login}
+                key={c.id}
                 type="button"
                 onClick={() => { setLogin(c.login); setPassword(c.password); setError(""); }}
                 className="w-full flex items-center justify-between text-xs px-2 py-1.5 rounded-sm hover:bg-muted transition-colors text-left group"
