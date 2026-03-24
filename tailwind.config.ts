@@ -62,6 +62,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				risk: {
+					low: 'hsl(var(--risk-low))',
+					medium: 'hsl(var(--risk-medium))',
+					high: 'hsl(var(--risk-high))',
+					critical: 'hsl(var(--risk-critical))',
 				}
 			},
 			borderRadius: {
@@ -73,14 +79,6 @@ export default {
 				sans: ['IBM Plex Sans', 'sans-serif'],
 				display: ['Oswald', 'sans-serif'],
 				mono: ['IBM Plex Mono', 'monospace'],
-			},
-			colors: {
-				risk: {
-					low: 'hsl(var(--risk-low))',
-					medium: 'hsl(var(--risk-medium))',
-					high: 'hsl(var(--risk-high))',
-					critical: 'hsl(var(--risk-critical))',
-				}
 			},
 			keyframes: {
 				'accordion-down': {
